@@ -1,10 +1,10 @@
 import React from "react";
 import { SearchBox } from "../SearchBox";
-import "./index.module.css";
+import leftNavStyles from "./index.module.css";
 
 export const LeftSideBar = () => {
   return (
-    <div>
+    <div className={leftNavStyles.bgContainer}>
       <SearchBox />
     </div>
   );

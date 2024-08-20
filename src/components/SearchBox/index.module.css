@@ -1,0 +1,21 @@
+.bgContainer {
+  border-radius: 8px;
+  border: 1px solid red;
+  display: flex;
+  background-color: var(--bg-primary);
+}
+
+img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+input {
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+}

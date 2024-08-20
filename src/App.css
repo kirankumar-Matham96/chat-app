@@ -11,6 +11,7 @@ header {
 }
 main {
   background-color: #f0f2f5;
+  background-color: var(--bg-primary);
   height: 89.8%;
 }
 .main-container {
