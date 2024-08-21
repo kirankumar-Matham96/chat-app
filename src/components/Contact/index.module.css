@@ -1,0 +1,33 @@
+.bgContainer {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+.profilePic {
+  width: 4.3rem;
+}
+.profilePic > img {
+  width: 100%;
+}
+.contactDataContainer {
+  border-bottom: 0.05rem solid #d1d1d1;
+  width: 100%;
+  padding-left: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.contactData {
+  display: flex;
+  flex-direction: column;
+}
+.contactData > span {
+  margin: 0.3rem 0 0.1rem;
+}
+
+.contactData > :first-child {
+  font-weight: 600;
+}
+
+.dateContainer {
+  margin: 0.3rem 0 0.1rem;
+}

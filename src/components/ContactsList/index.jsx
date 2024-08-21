@@ -1,6 +1,23 @@
 import React from "react";
-import "./index.module.css";
+import { Contact } from "../Contact";
+// import contactListStyles from "./index.module.css";
 
 export const ContactsList = () => {
-  return <div>ContactsList</div>;
+  return (
+    <>
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+      <Contact />
+    </>
+  );
 };
