@@ -1,6 +1,6 @@
 import React from "react";
-import "./index.module.css";
+import homeStyles from "./index.module.css";
 
 export const Home = () => {
-  return <div>Home Page</div>;
+  return <div className={homeStyles.bgContainer}></div>;
 };

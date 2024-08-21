@@ -1,6 +1,16 @@
 import React from "react";
-import "./index.module.css";
+import errorStyles from "./index.module.css";
 
 export const ErrorPage = () => {
-  return <div>Oops! Something went wrong... Please try later.</div>;
+  return (
+    <div className={errorStyles.bgContainer}>
+      <h1>Page Not Found!</h1>
+      <div>
+        <img
+          src="https://res.cloudinary.com/do4v7miwh/image/upload/v1724205760/samples/Gifs/giphy_xc7i5a.webp"
+          alt="error"
+        />
+      </div>
+    </div>
+  );
 };

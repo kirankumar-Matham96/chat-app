@@ -3,7 +3,9 @@
 }
 header {
   height: 10%;
-  background-color: green;
+  /* background-color: #023e8a; */
+  background-color: #0077b6;
+  
   color: #fff;
   display: flex;
   justify-content: center;
@@ -24,4 +26,6 @@ main {
   /* border: 1px solid red; */
 }
 .right-container {
+  width: 75%;
+  overflow: hidden;
 }

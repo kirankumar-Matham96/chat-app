@@ -3,11 +3,14 @@
   /* border: 1px solid red; */
   display: flex;
   background-color: var(--bg-primary);
+  padding: 0.4rem 0.5rem 0.2rem;
 }
 
-img {
-  width: 2rem;
+.iconContainer {
   margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #5e5e5e;
 }
 
 input {

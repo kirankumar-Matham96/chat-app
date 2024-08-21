@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import searchBoxStyles from "./index.module.css";
 
 export const SearchBox = () => {
@@ -10,10 +11,9 @@ export const SearchBox = () => {
 
   return (
     <div className={searchBoxStyles.bgContainer}>
-      <img
-        src="https://cdn-icons-png.flaticon.com/128/8915/8915520.png"
-        alt="search"
-      />
+      <div className={searchBoxStyles.iconContainer}>
+        <FaSearch />
+      </div>
       <input
         type="search"
         placeholder="Search"
