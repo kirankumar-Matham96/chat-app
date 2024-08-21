@@ -1,0 +1,17 @@
+.bgContainer {
+  border-radius: 0rem 8px 8px 8px;
+  background-color: var(--white);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+  display: inline-flex;
+  justify-content: space-between;
+  max-width: 60%;
+}
+.message {
+  margin: 0;
+}
+
+.timeStamp {
+  font-size: 0.85rem;
+  align-self: flex-end;
+}

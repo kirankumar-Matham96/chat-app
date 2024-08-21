@@ -1,4 +1,5 @@
 import React from "react";
+import { MessageCard } from "../MessageCard";
 import { MessageInput } from "../MessageInput";
 import rightContainerStyles from "./index.module.css";
 
@@ -22,6 +23,36 @@ export const RightContainer = () => {
               person 2, person 1, person 2
             </p>
           </div>
+        </div>
+        <div className={rightContainerStyles.mainChatBody}>
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
+          <MessageCard />
         </div>
       </div>
       <div className={rightContainerStyles.inputContainer}>
