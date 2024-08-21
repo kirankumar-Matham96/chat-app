@@ -1,6 +1,11 @@
 import React from "react";
-import "./index.module.css";
+import { RightContainer } from "../../components/RightContainer";
+import chatStyles from "./index.module.css";
 
 export const Chat = () => {
-  return <div>Chat Page</div>;
+  return (
+    <div className={chatStyles.bgContainer}>
+      <RightContainer />
+    </div>
+  );
 };

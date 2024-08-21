@@ -1,6 +1,16 @@
 import React from "react";
-import "./index.module.css";
+import { MessageInput } from "../MessageInput";
+import rightContainerStyles from "./index.module.css";
 
 export const RightContainer = () => {
-  return <div>RightContainer</div>;
+  return (
+    <div className={rightContainerStyles.bgContainer}>
+      <div className={rightContainerStyles.mainContainer}>
+        Main message container
+      </div>
+      <div className={rightContainerStyles.inputContainer}>
+        <MessageInput />
+      </div>
+    </div>
+  );
 };

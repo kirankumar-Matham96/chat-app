@@ -1,0 +1,24 @@
+.bgContainer {
+  /* border: 1px solid red; */
+
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+.input {
+  padding: 0.7rem 2rem;
+  width: 91%;
+  border-radius: 8px;
+  background-color: var(--white);
+}
+button {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}

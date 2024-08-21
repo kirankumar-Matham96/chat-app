@@ -1,0 +1,15 @@
+.bgContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mainContainer {
+  height: 100%;
+  padding: 0 1rem 0;
+}
+.inputContainer {
+  background-color: var(--bg-primary);
+  max-height: 10rem;
+  padding: 1rem 1rem 1rem 2rem;
+}
