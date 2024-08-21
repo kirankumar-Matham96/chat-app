@@ -6,8 +6,45 @@
 }
 .mainContainer {
   height: 100%;
-  padding: 0 1rem 0;
 }
+.mainChatHeader {
+  padding: 0.5rem 2rem;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+}
+.headerImage {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 22rem;
+  overflow: hidden;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.headerImage > img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.headerTextContainer {
+  flex-grow: 1;
+  max-width: 93%;
+}
+.headerTextContainer > p {
+  margin: 0;
+}
+.groupName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 0 0.3rem;
+}
+.groupMembersList {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .inputContainer {
   background-color: var(--bg-primary);
   max-height: 10rem;
