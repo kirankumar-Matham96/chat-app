@@ -1,11 +1,36 @@
 .bgContainer {
   border-radius: 0rem 8px 8px 8px;
   background-color: var(--white);
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   margin-bottom: 0.25rem;
   display: inline-flex;
   justify-content: space-between;
   max-width: 60%;
+  word-wrap: break-word;
+}
+
+.alignRight {
+  word-wrap: break-word;
+  max-width: 60%;
+  align-self: flex-end;
+}
+.selfMessageContainer {
+  background-color: var(--white);
+  background-color: var(--self-message-bg);
+  align-self: flex-end;
+  border-radius: 8px 0 8px 8px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.otherMessageContainer {
+  border-radius: 0rem 8px 8px 8px;
+  background-color: var(--white);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+  display: inline-flex;
+  justify-content: space-between;
 }
 .message {
   margin: 0;
@@ -14,4 +39,6 @@
 .timeStamp {
   font-size: 0.85rem;
   align-self: flex-end;
+  margin-left: 0.5rem;
+  color: #5d5d5d;
 }

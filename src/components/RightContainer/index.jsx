@@ -1,58 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MessageCard } from "../MessageCard";
 import { MessageInput } from "../MessageInput";
+import { useDispatch, useSelector } from "react-redux";
+import { initialLoad, chatSelector } from "../../redux/reducers/chatSlice";
 import rightContainerStyles from "./index.module.css";
 
 export const RightContainer = () => {
+  const dispatch = useDispatch();
+  const {
+    contacts,
+    currentContact,
+    conversations,
+    currentConversation,
+    loading,
+  } = useSelector(chatSelector);
+
+  useEffect(() => {
+    dispatch(initialLoad());
+  }, [dispatch]);
+
   return (
     <div className={rightContainerStyles.bgContainer}>
       <div className={rightContainerStyles.mainContainer}>
         <div className={rightContainerStyles.mainChatHeader}>
           <div className={rightContainerStyles.headerImage}>
-            <img
-              src="https://res.cloudinary.com/do4v7miwh/image/upload/v1642074083/samples/animals/three-dogs.jpg"
-              alt="1group icon"
-            />
+            <img src={currentContact.imageUrl} alt={currentContact.name} />
           </div>
           <div className={rightContainerStyles.headerTextContainer}>
-            <p className={rightContainerStyles.groupName}>Group name</p>
-            <p className={rightContainerStyles.groupMembersList}>
+            <p className={rightContainerStyles.groupName}>
+              {currentContact.name}
+            </p>
+            {/* <p className={rightContainerStyles.groupMembersList}>
               Group members names, person 1, person 2, person 1, person 2,
               person 1, person 2, person 1, person 2, person 1, person 2, person
               1, person 2, person 1, person 2, person 1, person 2, person 1,
               person 2, person 1, person 2
-            </p>
+            </p> */}
           </div>
         </div>
         <div className={rightContainerStyles.mainChatBody}>
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
-          <MessageCard />
+          {currentConversation.messages.map((message) => (
+            <>
+              {console.log("message => ", message)}{" "}
+              <MessageCard key={message.id} message={message} />
+            </>
+          ))}
         </div>
       </div>
       <div className={rightContainerStyles.inputContainer}>

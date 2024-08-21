@@ -1,15 +1,31 @@
 import messageCardStyles from "./index.module.css";
 
-export const MessageCard = () => {
+export const MessageCard = ({ message, loading }) => {
+  const { sender, text, timestamp } = message;
+  console.log("in message card => ", { sender, text, timeStamp: timestamp });
   return (
-    <div className={messageCardStyles.bgContainer}>
-      <p className={messageCardStyles.message}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-        recusandae, reiciendis nihil aliquid natus voluptate iste aliquam
-        dolorum blanditiis ipsam minus cupiditate unde sed, harum qui alias!
-        Nesciunt, accusamus corrupti?
-      </p>
-      <span className={messageCardStyles.timeStamp}>yesterday</span>
+    <div
+      className={
+        sender === "You"
+          ? messageCardStyles.alignRight
+          : messageCardStyles.bgContainer
+      }
+    >
+      {sender === "You" ? (
+        <div className={messageCardStyles.selfMessageContainer}>
+          <p className={messageCardStyles.message}>{text}</p>
+          <span className={messageCardStyles.timeStamp}>
+            {loading ? "... " : timestamp}
+          </span>
+        </div>
+      ) : (
+        <div className={messageCardStyles.otherMessageContainer}>
+          <p className={messageCardStyles.message}>{text}</p>
+          <span className={messageCardStyles.timeStamp}>
+            {loading ? "... " : timestamp}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

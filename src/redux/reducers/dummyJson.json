@@ -1,0 +1,778 @@
+{
+  "conversations": [
+    {
+      "id": 1,
+      "contactId": 1,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Hello, how are you?",
+          "timestamp": "2024-08-20 09:15 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Alice",
+          "text": "I am good, thanks! How about you?",
+          "timestamp": "2024-08-20 09:16 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Doing well, thanks!",
+          "timestamp": "2024-08-20 09:17 AM"
+        },
+        {
+          "id": 4,
+          "sender": "Alice",
+          "text": "Great to hear!",
+          "timestamp": "2024-08-20 09:18 AM"
+        },
+        {
+          "id": 5,
+          "sender": "You",
+          "text": "Any plans for the weekend?",
+          "timestamp": "2024-08-20 09:20 AM"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "contactId": 2,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Did you finish the project?",
+          "timestamp": "2024-08-19 02:45 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Bob",
+          "text": "Not yet, still working on it.",
+          "timestamp": "2024-08-19 02:46 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Need any help?",
+          "timestamp": "2024-08-19 02:47 PM"
+        },
+        {
+          "id": 4,
+          "sender": "Bob",
+          "text": "I’m good, but thanks for offering!",
+          "timestamp": "2024-08-19 02:48 PM"
+        },
+        {
+          "id": 5,
+          "sender": "You",
+          "text": "Alright, let me know if you need anything.",
+          "timestamp": "2024-08-19 02:50 PM"
+        },
+        {
+          "id": 6,
+          "sender": "Bob",
+          "text": "Will do, thanks!",
+          "timestamp": "2024-08-19 02:51 PM"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "contactId": 3,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Are we still on for lunch tomorrow?",
+          "timestamp": "2024-08-18 11:30 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Charlie",
+          "text": "Yes, definitely!",
+          "timestamp": "2024-08-18 11:31 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Great, see you then!",
+          "timestamp": "2024-08-18 11:32 AM"
+        },
+        {
+          "id": 4,
+          "sender": "Charlie",
+          "text": "Looking forward to it.",
+          "timestamp": "2024-08-18 11:33 AM"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "contactId": 4,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Happy Birthday! Have a great day!",
+          "timestamp": "2024-08-17 08:00 AM"
+        },
+        {
+          "id": 2,
+          "sender": "David",
+          "text": "Thank you so much!",
+          "timestamp": "2024-08-17 08:01 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Any special plans for today?",
+          "timestamp": "2024-08-17 08:05 AM"
+        },
+        {
+          "id": 4,
+          "sender": "David",
+          "text": "Just a small gathering with friends and family.",
+          "timestamp": "2024-08-17 08:06 AM"
+        },
+        {
+          "id": 5,
+          "sender": "You",
+          "text": "Sounds perfect, enjoy!",
+          "timestamp": "2024-08-17 08:07 AM"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "contactId": 5,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Don’t forget the meeting at 3 PM.",
+          "timestamp": "2024-08-16 03:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Eve",
+          "text": "I’ll be there, thanks for the reminder.",
+          "timestamp": "2024-08-16 03:01 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "No problem!",
+          "timestamp": "2024-08-16 03:02 PM"
+        },
+        {
+          "id": 4,
+          "sender": "Eve",
+          "text": "See you then.",
+          "timestamp": "2024-08-16 03:03 PM"
+        },
+        {
+          "id": 5,
+          "sender": "You",
+          "text": "Looking forward to it.",
+          "timestamp": "2024-08-16 03:04 PM"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "contactId": 6,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Let’s catch up this weekend.",
+          "timestamp": "2024-08-15 05:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Frank",
+          "text": "Sounds good! What time works for you?",
+          "timestamp": "2024-08-15 05:01 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "How about Saturday afternoon?",
+          "timestamp": "2024-08-15 05:02 PM"
+        },
+        {
+          "id": 4,
+          "sender": "Frank",
+          "text": "Perfect, see you then.",
+          "timestamp": "2024-08-15 05:03 PM"
+        },
+        {
+          "id": 5,
+          "sender": "You",
+          "text": "Great, looking forward to it!",
+          "timestamp": "2024-08-15 05:04 PM"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "contactId": 7,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "How’s the new job going?",
+          "timestamp": "2024-08-14 10:15 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Grace",
+          "text": "It’s challenging, but I’m enjoying it!",
+          "timestamp": "2024-08-14 10:16 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "That’s awesome, congrats again!",
+          "timestamp": "2024-08-14 10:17 AM"
+        },
+        {
+          "id": 4,
+          "sender": "Grace",
+          "text": "Thank you, it means a lot!",
+          "timestamp": "2024-08-14 10:18 AM"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "contactId": 8,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Check out this article I found.",
+          "timestamp": "2024-08-13 04:20 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Hank",
+          "text": "This is really interesting, thanks for sharing!",
+          "timestamp": "2024-08-13 04:21 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Glad you liked it!",
+          "timestamp": "2024-08-13 04:22 PM"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "contactId": 9,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Have you seen the latest episode of the show?",
+          "timestamp": "2024-08-12 07:30 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Ivy",
+          "text": "Yes, it was amazing!",
+          "timestamp": "2024-08-12 07:31 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "I agree, can’t wait for the next one.",
+          "timestamp": "2024-08-12 07:32 PM"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "contactId": 10,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Just checking in, how are things?",
+          "timestamp": "2024-08-11 06:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Jack",
+          "text": "All good, thanks for asking.",
+          "timestamp": "2024-08-11 06:01 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Great to hear, let’s catch up soon.",
+          "timestamp": "2024-08-11 06:02 PM"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "contactId": 11,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Do you have the reports ready?",
+          "timestamp": "2024-08-10 09:00 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Laura",
+          "text": "Yes, I’ll send them over shortly.",
+          "timestamp": "2024-08-10 09:05 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Thanks!",
+          "timestamp": "2024-08-10 09:06 AM"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "contactId": 12,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Can you review the document?",
+          "timestamp": "2024-08-09 03:30 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Mike",
+          "text": "Sure, I’ll take a look tonight.",
+          "timestamp": "2024-08-09 03:35 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Let me know if you need anything.",
+          "timestamp": "2024-08-09 03:36 PM"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "contactId": 13,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Any updates on the project?",
+          "timestamp": "2024-08-08 11:45 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Nina",
+          "text": "We’re on track for the deadline.",
+          "timestamp": "2024-08-08 11:50 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Great to hear!",
+          "timestamp": "2024-08-08 11:51 AM"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "contactId": 14,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "How was the conference?",
+          "timestamp": "2024-08-07 06:30 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Oliver",
+          "text": "It was really insightful, thanks for asking.",
+          "timestamp": "2024-08-07 06:32 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Glad to hear!",
+          "timestamp": "2024-08-07 06:33 PM"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "contactId": 15,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Do you want to join us for dinner?",
+          "timestamp": "2024-08-06 07:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Paul",
+          "text": "I’d love to, what time?",
+          "timestamp": "2024-08-06 07:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "7:30 PM at the new place downtown.",
+          "timestamp": "2024-08-06 07:06 PM"
+        },
+        {
+          "id": 4,
+          "sender": "Paul",
+          "text": "Sounds perfect, see you there.",
+          "timestamp": "2024-08-06 07:07 PM"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "contactId": 16,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Did you get the package?",
+          "timestamp": "2024-08-05 01:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Rachel",
+          "text": "Yes, it arrived this morning.",
+          "timestamp": "2024-08-05 01:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Great, let me know if you need help with anything.",
+          "timestamp": "2024-08-05 01:06 PM"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "contactId": 17,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "What’s the status of the design?",
+          "timestamp": "2024-08-04 02:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Sophie",
+          "text": "We’re finalizing it today.",
+          "timestamp": "2024-08-04 02:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Perfect, thanks!",
+          "timestamp": "2024-08-04 02:06 PM"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "contactId": 18,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Can you make it to the team meeting tomorrow?",
+          "timestamp": "2024-08-03 04:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Tom",
+          "text": "I’ll be there, thanks for the reminder.",
+          "timestamp": "2024-08-03 04:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "No problem!",
+          "timestamp": "2024-08-03 04:06 PM"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "contactId": 19,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Any feedback on the proposal?",
+          "timestamp": "2024-08-02 11:00 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Ursula",
+          "text": "It looks good overall, just a few tweaks needed.",
+          "timestamp": "2024-08-02 11:05 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Thanks, I’ll make the changes.",
+          "timestamp": "2024-08-02 11:06 AM"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "contactId": 20,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Are you free to talk tomorrow?",
+          "timestamp": "2024-08-01 10:00 AM"
+        },
+        {
+          "id": 2,
+          "sender": "Victor",
+          "text": "Yes, what time?",
+          "timestamp": "2024-08-01 10:05 AM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "How about 2 PM?",
+          "timestamp": "2024-08-01 10:06 AM"
+        },
+        {
+          "id": 4,
+          "sender": "Victor",
+          "text": "2 PM works for me.",
+          "timestamp": "2024-08-01 10:07 AM"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "contactId": 21,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Have you finished the design work?",
+          "timestamp": "2024-07-31 05:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Wendy",
+          "text": "Almost done, should be ready by end of day.",
+          "timestamp": "2024-07-31 05:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Great, thanks for the update.",
+          "timestamp": "2024-07-31 05:06 PM"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "contactId": 22,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "Can we reschedule our meeting?",
+          "timestamp": "2024-07-30 03:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Xander",
+          "text": "Sure, what time works for you?",
+          "timestamp": "2024-07-30 03:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "How about Friday morning?",
+          "timestamp": "2024-07-30 03:06 PM"
+        },
+        {
+          "id": 4,
+          "sender": "Xander",
+          "text": "Friday morning is fine.",
+          "timestamp": "2024-07-30 03:07 PM"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "contactId": 23,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "How’s the new project going?",
+          "timestamp": "2024-07-29 12:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Yara",
+          "text": "It’s going well, making good progress.",
+          "timestamp": "2024-07-29 12:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Awesome, keep it up!",
+          "timestamp": "2024-07-29 12:06 PM"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "contactId": 24,
+      "messages": [
+        {
+          "id": 1,
+          "sender": "You",
+          "text": "When can we finalize the deal?",
+          "timestamp": "2024-07-28 02:00 PM"
+        },
+        {
+          "id": 2,
+          "sender": "Zoe",
+          "text": "Let’s do it by the end of the week.",
+          "timestamp": "2024-07-28 02:05 PM"
+        },
+        {
+          "id": 3,
+          "sender": "You",
+          "text": "Sounds good to me.",
+          "timestamp": "2024-07-28 02:06 PM"
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "David",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Eve",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Frank",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Grace",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Hank",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Ivy",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Jack",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/10.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Karen",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Leo",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/12.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Mona",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/13.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Nate",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/14.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Olivia",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/15.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Paul",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/16.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Quinn",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/17.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Rachel",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/18.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Steve",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/male/19.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Tina",
+      "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/20.jpg"
+    }
+  ]
+}
