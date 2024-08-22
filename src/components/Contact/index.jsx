@@ -1,14 +1,14 @@
 import React from "react";
 import { selectConversation } from "../../redux/reducers/chatSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import contactStyles from "./index.module.css";
 
-export const Contact = ({ contact }) => {
-  // selectConversation
+export const Contact = ({ contact, lastMessage }) => {
   const dispatch = useDispatch();
   const { id, name, imgUrl } = contact;
 
   const onSelectContactHandler = () => {
+    // selectConversation
     dispatch(selectConversation(id));
   };
 
@@ -20,7 +20,12 @@ export const Contact = ({ contact }) => {
       <div className={contactStyles.contactDataContainer}>
         <div className={contactStyles.contactData}>
           <span>{name}</span>
-          <span>Some text form chat...</span>
+          <span>
+            {lastMessage.sender === "You" ? "You: " : ""}
+            {+lastMessage.text.length > 20
+              ? lastMessage.text.slice(0, 20) + "..."
+              : lastMessage.text}
+          </span>
         </div>
         <div className={contactStyles.dateContainer}>
           <span>yesterday</span>

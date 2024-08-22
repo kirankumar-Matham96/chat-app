@@ -24,6 +24,7 @@ main {
   display: flex;
   height: 100%;
 }
+
 .left-container {
   width: 25%;
   /* border: 1px solid red; */

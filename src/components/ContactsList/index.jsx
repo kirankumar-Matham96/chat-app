@@ -1,20 +1,30 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { Contact } from "../Contact";
 import { useSelector } from "react-redux";
 import { chatSelector } from "../../redux/reducers/chatSlice";
-import contactListStyles from "./index.module.css";
+import "./index.module.css";
 
 export const ContactsList = () => {
-  const { contacts } = useSelector(chatSelector);
-  // console.log("contacts => ", contacts);
+  const { contacts, conversations } = useSelector(chatSelector);
   return (
     <>
-      {contacts.map((contact) => (
-        <Link to="/chat">
-          <Contact key={contact.id} contact={contact} />
-        </Link>
-      ))}
+      {contacts.map((contact) => {
+        const contactConversation = conversations.find(
+          (conversations) => conversations.contactId === contact.id
+        );
+        const lastMessage =
+          contactConversation.messages[contactConversation.messages.length - 1];
+        console.log("lastMessage => ", lastMessage);
+
+        return (
+          <div key={contact.id}>
+            <Link to="/chat">
+              <Contact contact={contact} lastMessage={lastMessage} />
+            </Link>
+          </div>
+        );
+      })}
     </>
   );
 };

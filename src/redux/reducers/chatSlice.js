@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import dummyData from "./dummyJson.json";
 
-// console.log("dummyData => ", dummyData);
-
 const INITIAL_STATE = {
   contacts: dummyData.contacts,
   currentContact: dummyData.contacts[0],
@@ -28,9 +26,8 @@ const formatTimestamp = (dateObject) => {
 
   // Pad hours and minutes with leading zero if necessary
   hours = hours < 10 ? "0" + hours : hours;
-  // minutes = minutes < 10 ? "0" + minutes : minutes;
 
-  if (minutes == 0) {
+  if (minutes === 0) {
     minutes = "00";
   } else if (minutes < 10) {
     minutes = "0" + minutes;
