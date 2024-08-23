@@ -3,9 +3,9 @@ import dummyData from "./dummyJson.json";
 
 const INITIAL_STATE = {
   contacts: dummyData.contacts,
-  currentContact: dummyData.contacts[0],
+  currentContact: dummyData.contacts[1],
   conversations: dummyData.conversations,
-  currentConversation: dummyData.conversations[0],
+  currentConversation: dummyData.conversations[1],
   loading: false,
   error: null,
 };

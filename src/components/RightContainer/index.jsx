@@ -24,12 +24,6 @@ export const RightContainer = () => {
             <p className={rightContainerStyles.groupName}>
               {currentContact.name}
             </p>
-            {/* <p className={rightContainerStyles.groupMembersList}>
-              Group members names, person 1, person 2, person 1, person 2,
-              person 1, person 2, person 1, person 2, person 1, person 2, person
-              1, person 2, person 1, person 2, person 1, person 2, person 1,
-              person 2, person 1, person 2
-            </p> */}
           </div>
         </div>
         <div className={rightContainerStyles.mainChatBody}>

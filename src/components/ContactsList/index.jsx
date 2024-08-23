@@ -10,12 +10,35 @@ export const ContactsList = () => {
   return (
     <>
       {contacts.map((contact) => {
-        const contactConversation = conversations.find(
-          (conversations) => conversations.contactId === contact.id
-        );
-        const lastMessage =
-          contactConversation.messages[contactConversation.messages.length - 1];
-        console.log("lastMessage => ", lastMessage);
+
+        if (contact.id === 0) {
+          return;
+        }
+
+        const contactConversation = conversations.find((conversations) => {
+          if (
+            conversations.contactId &&
+            conversations.contactId === contact.id
+          ) {
+            return true;
+          }
+          if (conversations.groupId && conversations.groupId === contact.id) {
+            return true;
+          }
+          return false;
+        });
+
+        let lastMessage = "";
+        if (
+          contactConversation &&
+          contactConversation.messages &&
+          contactConversation.messages.length > 0
+        ) {
+          lastMessage =
+            contactConversation.messages[
+              contactConversation.messages.length - 1
+            ];
+        }
 
         return (
           <div key={contact.id}>

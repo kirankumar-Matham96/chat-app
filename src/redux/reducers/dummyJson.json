@@ -145,6 +145,136 @@
       ]
     },
     {
+      "id": "group1",
+      "groupId": "group1",
+      "groupName": "Project Team A",
+      "members": [
+        { "id": 1 },
+        { "id": 2 },
+        { "id": 3 },
+        { "id": 0 },
+        { "id": 7 },
+        { "id": 8 }
+      ],
+      "messages": [
+        {
+          "id": "msg1",
+          "sender": "Alice",
+          "text": "Hey team, let's meet at 3 PM.",
+          "timestamp": "2024-08-22T10:00:00Z"
+        },
+        {
+          "id": "msg2",
+          "sender": "Bob",
+          "text": "Sounds good to me.",
+          "timestamp": "2024-08-22T10:05:00Z"
+        },
+        {
+          "id": "msg3",
+          "sender": "You",
+          "text": "I’ll bring some extra materials for the meeting.",
+          "timestamp": "2024-08-22T10:08:00Z"
+        },
+        {
+          "id": "msg4",
+          "sender": "Charlie",
+          "text": "I'll prepare the presentation.",
+          "timestamp": "2024-08-22T10:10:00Z"
+        },
+        {
+          "id": "msg5",
+          "sender": "Grace",
+          "text": "Don't forget to send the agenda.",
+          "timestamp": "2024-08-22T10:15:00Z"
+        },
+        {
+          "id": "msg6",
+          "sender": "Hank",
+          "text": "I'll share the documents by noon.",
+          "timestamp": "2024-08-22T10:20:00Z"
+        },
+        {
+          "id": "msg7",
+          "sender": "Alice",
+          "text": "Great, thanks everyone!",
+          "timestamp": "2024-08-22T10:25:00Z"
+        },
+        {
+          "id": "msg8",
+          "sender": "Bob",
+          "text": "See you all at 3 PM.",
+          "timestamp": "2024-08-22T10:30:00Z"
+        },
+        {
+          "id": "msg9",
+          "sender": "You",
+          "text": "Is there anything specific you want me to focus on?",
+          "timestamp": "2024-08-22T10:32:00Z"
+        },
+        {
+          "id": "msg10",
+          "sender": "Charlie",
+          "text": "I'll be there early to set up.",
+          "timestamp": "2024-08-22T10:35:00Z"
+        },
+        {
+          "id": "msg11",
+          "sender": "Grace",
+          "text": "Let me know if you need any help.",
+          "timestamp": "2024-08-22T10:40:00Z"
+        },
+        {
+          "id": "msg12",
+          "sender": "Hank",
+          "text": "Looking forward to the meeting.",
+          "timestamp": "2024-08-22T10:45:00Z"
+        },
+        {
+          "id": "msg13",
+          "sender": "Alice",
+          "text": "Let's make sure we cover all points.",
+          "timestamp": "2024-08-22T10:50:00Z"
+        },
+        {
+          "id": "msg14",
+          "sender": "Bob",
+          "text": "I'll review the agenda one more time.",
+          "timestamp": "2024-08-22T10:55:00Z"
+        },
+        {
+          "id": "msg15",
+          "sender": "Charile",
+          "text": "Just added a few more slides.",
+          "timestamp": "2024-08-22T11:00:00Z"
+        },
+        {
+          "id": "msg16",
+          "sender": "You",
+          "text": "I’ll also review the slides and provide feedback.",
+          "timestamp": "2024-08-22T11:05:00Z"
+        },
+        {
+          "id": "msg17",
+          "sender": "Grace",
+          "text": "I updated the document as well.",
+          "timestamp": "2024-08-22T11:10:00Z"
+        },
+        {
+          "id": "msg18",
+          "sender": "Hank",
+          "text": "All set from my side.",
+          "timestamp": "2024-08-22T11:15:00Z"
+        },
+        {
+          "id": "msg19",
+          "sender": "You",
+          "text": "Let me know if you need anything else from me.",
+          "timestamp": "2024-08-22T11:20:00Z"
+        }
+      ]
+    },
+
+    {
       "id": 5,
       "contactId": 5,
       "messages": [
@@ -267,6 +397,140 @@
           "sender": "You",
           "text": "Glad you liked it!",
           "timestamp": "2024-08-13 04:22 PM"
+        }
+      ]
+    },
+    {
+      "id": "group2",
+      "groupId": "group2",
+      "groupName": "Friends",
+      "members": [
+        { "id": 4 },
+        { "id": 5 },
+        { "id": 0 },
+        { "id": 9 },
+        { "id": 10 }
+      ],
+      "messages": [
+        {
+          "id": "msg1",
+          "sender": "Eve",
+          "text": "Who's up for a movie night?",
+          "timestamp": "2024-08-22T11:00:00Z"
+        },
+        {
+          "id": "msg2",
+          "sender": "You",
+          "text": "Count me in!",
+          "timestamp": "2024-08-22T11:10:00Z"
+        },
+        {
+          "id": "msg3",
+          "sender": "David",
+          "text": "What movie are we watching?",
+          "timestamp": "2024-08-22T11:20:00Z"
+        },
+        {
+          "id": "msg4",
+          "sender": "Ivy",
+          "text": "How about a comedy?",
+          "timestamp": "2024-08-22T11:30:00Z"
+        },
+        {
+          "id": "msg5",
+          "sender": "Jack",
+          "text": "I'm in for anything!",
+          "timestamp": "2024-08-22T11:40:00Z"
+        },
+        {
+          "id": "msg6",
+          "sender": "Eve",
+          "text": "Let's decide quickly.",
+          "timestamp": "2024-08-22T11:50:00Z"
+        },
+        {
+          "id": "msg7",
+          "sender": "You",
+          "text": "How about a classic?",
+          "timestamp": "2024-08-22T12:00:00Z"
+        },
+        {
+          "id": "msg8",
+          "sender": "David",
+          "text": "Sounds good to me.",
+          "timestamp": "2024-08-22T12:10:00Z"
+        },
+        {
+          "id": "msg9",
+          "sender": "You",
+          "text": "What time are we meeting?",
+          "timestamp": "2024-08-22T12:15:00Z"
+        },
+        {
+          "id": "msg10",
+          "sender": "Ivy",
+          "text": "Let's do it!",
+          "timestamp": "2024-08-22T12:20:00Z"
+        },
+        {
+          "id": "msg11",
+          "sender": "Jack",
+          "text": "Can't wait!",
+          "timestamp": "2024-08-22T12:30:00Z"
+        },
+        {
+          "id": "msg12",
+          "sender": "Eve",
+          "text": "What time are we meeting?",
+          "timestamp": "2024-08-22T12:40:00Z"
+        },
+        {
+          "id": "msg13",
+          "sender": "David",
+          "text": "Perfect timing.",
+          "timestamp": "2024-08-22T13:00:00Z"
+        },
+        {
+          "id": "msg14",
+          "sender": "Ivy",
+          "text": "I'll bring snacks.",
+          "timestamp": "2024-08-22T13:10:00Z"
+        },
+        {
+          "id": "msg15",
+          "sender": "Jack",
+          "text": "I'll take care of the drinks.",
+          "timestamp": "2024-08-22T13:20:00Z"
+        },
+        {
+          "id": "msg16",
+          "sender": "You",
+          "text": "Can someone confirm if we’re still on for 7 PM?",
+          "timestamp": "2024-08-22T13:25:00Z"
+        },
+        {
+          "id": "msg17",
+          "sender": "You",
+          "text": "Looking forward to the movie night!",
+          "timestamp": "2024-08-22T13:30:00Z"
+        },
+        {
+          "id": "msg18",
+          "sender": "David",
+          "text": "Me too! I love classic movies.",
+          "timestamp": "2024-08-22T13:35:00Z"
+        },
+        {
+          "id": "msg19",
+          "sender": "Eve",
+          "text": "Awesome, let's finalize the time.",
+          "timestamp": "2024-08-22T13:40:00Z"
+        },
+        {
+          "id": "msg20",
+          "sender": "You",
+          "text": "How about we meet at 6:30 PM instead?",
+          "timestamp": "2024-08-22T13:45:00Z"
         }
       ]
     },
@@ -675,9 +939,24 @@
   ],
   "contacts": [
     {
+      "id": 0,
+      "name": "You",
+      "imgUrl": ""
+    },
+    {
       "id": 1,
       "name": "Alice",
       "imgUrl": "https://xsgames.co/randomusers/assets/avatars/female/1.jpg"
+    },
+    {
+      "id": "group1",
+      "name": "Project Team A",
+      "imgUrl": ""
+    },
+    {
+      "id": "group2",
+      "name": "Friends",
+      "imgUrl": ""
     },
     {
       "id": 2,
