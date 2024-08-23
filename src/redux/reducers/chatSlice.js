@@ -2,11 +2,20 @@ import { createSlice } from "@reduxjs/toolkit";
 import dummyData from "./dummyJson.json";
 import newContacts from "./newContacts.json";
 
+localStorage.setItem("contacts", JSON.stringify(dummyData.contacts));
+localStorage.setItem("conversations", JSON.stringify(dummyData.conversations));
+localStorage.setItem("newContacts", JSON.stringify(newContacts));
+
+const currentContact = JSON.parse(localStorage.getItem("currentContact"));
+const currentConversation = JSON.parse(
+  localStorage.getItem("currentConversation")
+);
+
 const INITIAL_STATE = {
   contacts: dummyData.contacts,
-  currentContact: dummyData.contacts[0],
+  currentContact: currentContact || null,
   conversations: dummyData.conversations,
-  currentConversation: dummyData.conversations[0],
+  currentConversation: currentConversation || null,
   newContacts,
   showNewContacts: false,
   loading: false,
@@ -44,21 +53,43 @@ const chatSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     initialLoad: (state) => {
-      state.loading = true;
-      state.currentConversation.messages =
-        state.currentConversation.messages.map((message) => {
-          const newTS = formatTimestamp(message.timestamp);
-          return { ...message, timestamp: newTS };
-        });
+      const currentConversation = JSON.parse(
+        localStorage.getItem("currentConversation")
+      );
+      if (currentConversation) {
+        state.currentConversation = currentConversation;
+        // state.currentConversation.messages.map((message) => {
+        //   const newTS = formatTimestamp(message.timestamp);
+        //   return { ...message, timestamp: newTS };
+        // });
+      }
     },
     selectConversation: (state, action) => {
+      const conversations = JSON.parse(localStorage.getItem("conversations"));
+      const contacts = JSON.parse(localStorage.getItem("contacts"));
+
+      console.log("conversations form LS => ", conversations);
+      console.log("contacts form LS => ", contacts);
+
       // setting the current conversation
-      state.currentConversation = dummyData.conversations.find(
+      state.currentConversation = conversations.find(
         (conversation) => conversation.id === action.payload
       );
+
+      console.log("state.currentConversation => ", state.currentConversation);
+
+      localStorage.setItem(
+        "currentConversation",
+        JSON.stringify(state.currentConversation)
+      );
+
       // setting the current contact
-      state.currentContact = dummyData.contacts.find(
+      state.currentContact = contacts.find(
         (contact) => contact.id === action.payload
+      );
+      localStorage.setItem(
+        "currentContact",
+        JSON.stringify(state.currentContact)
       );
     },
     sendMessage: (state, action) => {
@@ -73,6 +104,10 @@ const chatSlice = createSlice({
         ...state.currentConversation.messages,
         newMessage,
       ];
+      localStorage.setItem(
+        "currentConversation",
+        JSON.stringify(state.currentConversation)
+      );
     },
     setShowNewContacts: (state, action) => {
       state.showNewContacts = true;
@@ -91,6 +126,8 @@ const chatSlice = createSlice({
         ...state.contacts,
       ];
 
+      localStorage.setItem("contacts", JSON.stringify(state.contacts));
+
       // setting the current conversation
       // state.currentConversation = dummyData.conversations.find(
       //   (conversation) => conversation.id === action.payload
@@ -101,6 +138,10 @@ const chatSlice = createSlice({
         contactId: dummyData.conversations.length + 1,
         messages: [],
       };
+      localStorage.setItem(
+        "currentConversation",
+        JSON.stringify(state.currentConversation)
+      );
 
       // setting the current contact
       // state.currentContact = dummyData.contacts.find(
@@ -112,6 +153,10 @@ const chatSlice = createSlice({
         timestamp: new Date().toString(),
         updatedAt: new Date().toString(),
       };
+      localStorage.setItem(
+        "currentContact",
+        JSON.stringify(state.currentContact)
+      );
     },
   },
 });

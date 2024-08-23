@@ -1,5 +1,5 @@
-1. Add new contact (pop up to show available contacts)
-2. Make the data consistant
+1. Sort the contacts by updatedAt
+2. Render the group members names in the chat header
 3. Check time format
 4. Documentation
 5. Readme

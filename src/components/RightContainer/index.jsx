@@ -4,37 +4,46 @@ import { MessageInput } from "../MessageInput";
 import { useDispatch, useSelector } from "react-redux";
 import { initialLoad, chatSelector } from "../../redux/reducers/chatSlice";
 import rightContainerStyles from "./index.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const RightContainer = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { currentContact, currentConversation } = useSelector(chatSelector);
 
   useEffect(() => {
     dispatch(initialLoad());
-  }, [dispatch]);
+    if (currentContact === null || currentConversation === null) {
+      navigate("/");
+    }
+  }, [dispatch, navigate]);
 
   return (
     <div className={rightContainerStyles.bgContainer}>
-      <div className={rightContainerStyles.mainContainer}>
-        <div className={rightContainerStyles.mainChatHeader}>
-          <div className={rightContainerStyles.headerImage}>
-            <img src={currentContact.imgUrl} alt={currentContact.name} />
+      {currentContact && currentConversation && (
+        <>
+          <div className={rightContainerStyles.mainContainer}>
+            <div className={rightContainerStyles.mainChatHeader}>
+              <div className={rightContainerStyles.headerImage}>
+                <img src={currentContact.imgUrl} alt={currentContact.name} />
+              </div>
+              <div className={rightContainerStyles.headerTextContainer}>
+                <p className={rightContainerStyles.groupName}>
+                  {currentContact.name}
+                </p>
+              </div>
+            </div>
+            <div className={rightContainerStyles.mainChatBody}>
+              {currentConversation.messages.map((message) => (
+                <MessageCard key={message.id} message={message} />
+              ))}
+            </div>
           </div>
-          <div className={rightContainerStyles.headerTextContainer}>
-            <p className={rightContainerStyles.groupName}>
-              {currentContact.name}
-            </p>
+          <div className={rightContainerStyles.inputContainer}>
+            <MessageInput />
           </div>
-        </div>
-        <div className={rightContainerStyles.mainChatBody}>
-          {currentConversation.messages.map((message) => (
-            <MessageCard key={message.id} message={message} />
-          ))}
-        </div>
-      </div>
-      <div className={rightContainerStyles.inputContainer}>
-        <MessageInput />
-      </div>
+        </>
+      )}
     </div>
   );
 };
