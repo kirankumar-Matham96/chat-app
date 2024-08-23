@@ -1,8 +1,7 @@
-1. Sort the contacts by updatedAt
-2. Render the group members names in the chat header
-3. Check time format
-4. Documentation
-5. Readme
+1. Check time format
+2. Add member to a group
+3. Documentation
+4. Readme
 
 # Getting Started with Create React App
 

@@ -2,6 +2,7 @@
   "conversations": [
     {
       "id": 1,
+      "type": "individual",
       "contactId": 1,
       "messages": [
         {
@@ -38,6 +39,7 @@
     },
     {
       "id": 2,
+      "type": "individual",
       "contactId": 2,
       "messages": [
         {
@@ -80,6 +82,7 @@
     },
     {
       "id": 3,
+      "type": "individual",
       "contactId": 3,
       "messages": [
         {
@@ -110,6 +113,7 @@
     },
     {
       "id": 4,
+      "type": "individual",
       "contactId": 4,
       "messages": [
         {
@@ -146,6 +150,7 @@
     },
     {
       "id": "group1",
+      "type": "group",
       "groupId": "group1",
       "groupName": "Project Team A",
       "members": [
@@ -275,6 +280,7 @@
     },
     {
       "id": 5,
+      "type": "individual",
       "contactId": 5,
       "messages": [
         {
@@ -311,6 +317,7 @@
     },
     {
       "id": 6,
+      "type": "individual",
       "contactId": 6,
       "messages": [
         {
@@ -347,6 +354,7 @@
     },
     {
       "id": 7,
+      "type": "individual",
       "contactId": 7,
       "messages": [
         {
@@ -377,6 +385,7 @@
     },
     {
       "id": 8,
+      "type": "individual",
       "contactId": 8,
       "messages": [
         {
@@ -401,6 +410,7 @@
     },
     {
       "id": "group2",
+      "type": "group",
       "groupId": "group2",
       "groupName": "Friends",
       "members": [
@@ -535,6 +545,7 @@
     },
     {
       "id": 9,
+      "type": "individual",
       "contactId": 9,
       "messages": [
         {
@@ -559,6 +570,7 @@
     },
     {
       "id": 10,
+      "type": "individual",
       "contactId": 10,
       "messages": [
         {
@@ -583,6 +595,7 @@
     },
     {
       "id": 11,
+      "type": "individual",
       "contactId": 11,
       "messages": [
         {
@@ -607,6 +620,7 @@
     },
     {
       "id": 12,
+      "type": "individual",
       "contactId": 12,
       "messages": [
         {
@@ -631,6 +645,7 @@
     },
     {
       "id": 13,
+      "type": "individual",
       "contactId": 13,
       "messages": [
         {
@@ -655,6 +670,7 @@
     },
     {
       "id": 14,
+      "type": "individual",
       "contactId": 14,
       "messages": [
         {
@@ -679,6 +695,7 @@
     },
     {
       "id": 15,
+      "type": "individual",
       "contactId": 15,
       "messages": [
         {
@@ -709,6 +726,7 @@
     },
     {
       "id": 16,
+      "type": "individual",
       "contactId": 16,
       "messages": [
         {
@@ -733,6 +751,7 @@
     },
     {
       "id": 17,
+      "type": "individual",
       "contactId": 17,
       "messages": [
         {
@@ -757,6 +776,7 @@
     },
     {
       "id": 18,
+      "type": "individual",
       "contactId": 18,
       "messages": [
         {
@@ -781,6 +801,7 @@
     },
     {
       "id": 19,
+      "type": "individual",
       "contactId": 19,
       "messages": [
         {
@@ -805,6 +826,7 @@
     },
     {
       "id": 20,
+      "type": "individual",
       "contactId": 20,
       "messages": [
         {
@@ -835,6 +857,7 @@
     },
     {
       "id": 21,
+      "type": "individual",
       "contactId": 21,
       "messages": [
         {
@@ -859,6 +882,7 @@
     },
     {
       "id": 22,
+      "type": "individual",
       "contactId": 22,
       "messages": [
         {
@@ -889,6 +913,7 @@
     },
     {
       "id": 23,
+      "type": "individual",
       "contactId": 23,
       "messages": [
         {
@@ -913,6 +938,7 @@
     },
     {
       "id": 24,
+      "type": "individual",
       "contactId": 24,
       "messages": [
         {

@@ -10,19 +10,21 @@ export const ContactsList = () => {
   return (
     <>
       {contacts.map((contact) => {
-
         if (contact.id === 0) {
           return;
         }
 
         const contactConversation = conversations.find((conversations) => {
           if (
-            conversations.contactId &&
+            conversations.type === "individual" &&
             conversations.contactId === contact.id
           ) {
             return true;
           }
-          if (conversations.groupId && conversations.groupId === contact.id) {
+          if (
+            conversations.type === "group" &&
+            conversations.groupId === contact.id
+          ) {
             return true;
           }
           return false;

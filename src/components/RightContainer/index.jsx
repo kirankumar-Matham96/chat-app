@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 export const RightContainer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { currentContact, currentConversation } = useSelector(chatSelector);
+  const { currentContact, currentConversation, contacts } =
+    useSelector(chatSelector);
 
   useEffect(() => {
     dispatch(initialLoad());
@@ -17,6 +18,14 @@ export const RightContainer = () => {
       navigate("/");
     }
   }, [dispatch, navigate]);
+
+  let members = null;
+  members =
+    currentConversation &&
+    currentConversation.type === "group" &&
+    currentConversation.members
+      .map((member) => contacts.find((contact) => contact.id === member.id))
+      .filter((member) => member);
 
   return (
     <div className={rightContainerStyles.bgContainer}>
@@ -31,6 +40,16 @@ export const RightContainer = () => {
                 <p className={rightContainerStyles.groupName}>
                   {currentContact.name}
                 </p>
+                {members && (
+                  <p className={rightContainerStyles.groupMembersList}>
+                    {members.map((member, index) => (
+                      <span key={member.id}>
+                        {index === 0 ? "" : ", "}
+                        {member.name}
+                      </span>
+                    ))}
+                  </p>
+                )}
               </div>
             </div>
             <div className={rightContainerStyles.mainChatBody}>
