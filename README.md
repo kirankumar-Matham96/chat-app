@@ -1,12 +1,9 @@
-1. Group contact - Done
-2. Group chat - Done
-3. Send a message to a conversation
-4. Send a message to a group chat
-5. Add new contact (pop up to show available contacts)
-6. Make the new data consistant
-7. Check time format
-8. Documentation
-9. Readme
+1. Add new contact (pop up to show available contacts)
+2. Make the new data consistant
+3. Check time format
+4. Documentation
+5. Readme
+
 
 # Getting Started with Create React App
 

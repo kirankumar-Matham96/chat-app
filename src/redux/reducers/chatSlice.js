@@ -58,12 +58,27 @@ const chatSlice = createSlice({
         (contact) => contact.id === action.payload
       );
     },
-    sendMessage: (state, action) => {},
+    sendMessage: (state, action) => {
+      console.log(action.payload);
+
+      const newMessage = {
+        id: state.currentConversation.messages.length + 1,
+        sender: "You",
+        text: action.payload,
+        timestamp: new Date().toString(),
+      };
+
+      state.currentConversation.messages = [
+        ...state.currentConversation.messages,
+        newMessage,
+      ];
+    },
     createConversation: (state, action) => {},
   },
 });
 
 export const chatReducer = chatSlice.reducer;
-export const { initialLoad, selectConversation } = chatSlice.actions;
+export const { initialLoad, selectConversation, sendMessage } =
+  chatSlice.actions;
 
 export const chatSelector = (state) => state.chatReducer;
