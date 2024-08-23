@@ -14,14 +14,14 @@ export const MessageCard = ({ message, loading }) => {
         <div className={messageCardStyles.selfMessageContainer}>
           <p className={messageCardStyles.message}>{text}</p>
           <span className={messageCardStyles.timeStamp}>
-            {loading ? "... " : timestamp}
+            {loading ? "... " : timestamp.time || timestamp}
           </span>
         </div>
       ) : (
         <div className={messageCardStyles.otherMessageContainer}>
           <p className={messageCardStyles.message}>{text}</p>
           <span className={messageCardStyles.timeStamp}>
-            {loading ? "... " : timestamp}
+            {loading ? "... " : timestamp.time || timestamp}
           </span>
         </div>
       )}

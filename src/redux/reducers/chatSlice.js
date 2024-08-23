@@ -7,8 +7,45 @@ let contacts = JSON.parse(localStorage.getItem("contacts"));
 let conversations = JSON.parse(localStorage.getItem("conversations"));
 let newContacts = JSON.parse(localStorage.getItem("newContacts"));
 
+const formatTimestamp = (dateObject) => {
+  const d = new Date(dateObject);
+
+  const day = d.getDate();
+  const month = d.getMonth() + 1;
+  const year = d.getFullYear();
+
+  const date = `${day}-${month}-${year}`;
+
+  // Get hours and minutes from the Date object
+  let hours = d.getHours();
+  let minutes = d.getMinutes();
+
+  // Determine AM or PM
+  const ampm = hours >= 12 ? "pm" : "am";
+
+  // Convert 24-hour format to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+
+  // Pad hours and minutes with leading zero if necessary
+  hours = hours < 10 ? "0" + hours : hours;
+
+  if (minutes === 0) {
+    minutes = "00";
+  } else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  const time = `${hours}:${minutes} ${ampm}`;
+
+  return { date, time };
+};
+
+const formattedContacts = dummyData.contacts.map((contact) => {
+  // console.log(contact);
+});
+
 // if the data is not available in the local storage
-console.log("from LS contacts => ", contacts);
 contacts ||
   localStorage.setItem("contacts", JSON.stringify(dummyData.contacts));
 
@@ -37,32 +74,6 @@ const INITIAL_STATE = {
   error: null,
 };
 
-const formatTimestamp = (dateObject) => {
-  const date = new Date(dateObject);
-
-  // Get hours and minutes from the Date object
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-
-  // Determine AM or PM
-  const ampm = hours >= 12 ? "pm" : "am";
-
-  // Convert 24-hour format to 12-hour format
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-
-  // Pad hours and minutes with leading zero if necessary
-  hours = hours < 10 ? "0" + hours : hours;
-
-  if (minutes === 0) {
-    minutes = "00";
-  } else if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-
-  return `${hours}:${minutes} ${ampm}`;
-};
-
 const chatSlice = createSlice({
   name: "chat",
   initialState: INITIAL_STATE,
@@ -75,7 +86,7 @@ const chatSlice = createSlice({
         state.currentConversation = currentConversation;
       }
 
-      if(contacts){
+      if (contacts) {
         state.contacts = contacts;
       }
     },
@@ -109,7 +120,7 @@ const chatSlice = createSlice({
         id: state.currentConversation.messages.length + 1,
         sender: "You",
         text: action.payload,
-        timestamp: new Date().toString(),
+        timestamp: formatTimestamp(new Date().toString()).time,
       };
 
       // setting the message in currentConversation
@@ -138,16 +149,7 @@ const chatSlice = createSlice({
         JSON.stringify(state.conversations)
       );
 
-      // Updating the contacts list (sorting by latest)
-
-      /**
-       * When new message is added, find the contact by contactId in the conversation.
-       * Then, find the contact in the list.
-       * Remove that contact and store it in a variable.
-       * Now, add this contact at the top of contacts list.
-       * Update the state.
-       */
-
+      /* Updating the contacts list (sorting by latest) */
       // When new message is added, find the contact by contactId in the conversation
       const currentContact = state.contacts.find(
         (contact) => contact.id === state.currentContact.id
@@ -176,18 +178,13 @@ const chatSlice = createSlice({
       state.contacts = [
         {
           ...action.payload,
-          timestamp: new Date().toString(),
-          updatedAt: new Date().toString(),
+          timestamp: formatTimestamp(new Date().toString()).time,
+          updatedAt: formatTimestamp(new Date().toString()).time,
         },
         ...state.contacts,
       ];
 
       localStorage.setItem("contacts", JSON.stringify(state.contacts));
-
-      // setting the current conversation
-      // state.currentConversation = dummyData.conversations.find(
-      //   (conversation) => conversation.id === action.payload
-      // );
 
       state.currentConversation = {
         id: dummyData.conversations.length + 1,
@@ -199,15 +196,10 @@ const chatSlice = createSlice({
         JSON.stringify(state.currentConversation)
       );
 
-      // setting the current contact
-      // state.currentContact = dummyData.contacts.find(
-      //   (contact) => contact.id === action.payload
-      // );
-
       state.currentContact = {
         ...action.payload,
-        timestamp: new Date().toString(),
-        updatedAt: new Date().toString(),
+        timestamp: formatTimestamp(new Date().toString()).time,
+        updatedAt: formatTimestamp(new Date().toString()).time,
       };
       localStorage.setItem(
         "currentContact",

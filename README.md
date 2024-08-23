@@ -1,7 +1,8 @@
-1. Check time format
-2. Add member to a group
-3. Documentation
-4. Readme
+1. Check time format (rewrite the dummy json to format time and date)
+2. From the container, check if the messages are consecutive. If consecutive then, less space. If not more space.
+3. Add member to a group
+4. Documentation
+5. Readme
 
 # Getting Started with Create React App
 
