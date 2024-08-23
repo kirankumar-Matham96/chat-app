@@ -1,9 +1,8 @@
 1. Add new contact (pop up to show available contacts)
-2. Make the new data consistant
+2. Make the data consistant
 3. Check time format
 4. Documentation
 5. Readme
-
 
 # Getting Started with Create React App
 

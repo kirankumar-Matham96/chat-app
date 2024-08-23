@@ -24,10 +24,12 @@ main {
   display: flex;
   height: 100%;
 }
-
+/* .popup-container {
+  border: 1px solid red;
+  position: relative;
+} */
 .left-container {
   width: 25%;
-  /* border: 1px solid red; */
 }
 .right-container {
   width: 75%;

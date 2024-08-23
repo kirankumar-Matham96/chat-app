@@ -1,6 +1,7 @@
 import { Home } from "./pages/Home";
 import { LeftSideBar } from "./components/LeftSideBar";
 import { Chat } from "./pages/Chat";
+import { NewContacts } from "./components/NewContacts";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
@@ -17,6 +18,7 @@ function App() {
         <main>
           <div className="main-container">
             <Provider store={store}>
+              <NewContacts />
               <div className="left-container">
                 <LeftSideBar />
               </div>

@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import dummyData from "./dummyJson.json";
+import newContacts from "./newContacts.json";
 
 const INITIAL_STATE = {
   contacts: dummyData.contacts,
-  currentContact: dummyData.contacts[1],
+  currentContact: dummyData.contacts[0],
   conversations: dummyData.conversations,
-  currentConversation: dummyData.conversations[1],
+  currentConversation: dummyData.conversations[0],
+  newContacts,
+  showNewContacts: false,
   loading: false,
   error: null,
 };
@@ -73,12 +76,17 @@ const chatSlice = createSlice({
         newMessage,
       ];
     },
-    createConversation: (state, action) => {},
+    setShowNewContacts: (state, action) => {
+      state.showNewContacts = true;
+    },
+    createConversation: (state, action) => {
+      state.showNewContacts = false;
+    },
   },
 });
 
 export const chatReducer = chatSlice.reducer;
-export const { initialLoad, selectConversation, sendMessage } =
+export const { initialLoad, selectConversation, sendMessage, setShowNewContacts, createConversation } =
   chatSlice.actions;
 
 export const chatSelector = (state) => state.chatReducer;
