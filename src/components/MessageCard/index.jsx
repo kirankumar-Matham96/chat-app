@@ -2,7 +2,6 @@ import messageCardStyles from "./index.module.css";
 
 export const MessageCard = ({ message, loading }) => {
   const { sender, text, timestamp } = message;
-  console.log({ sender, text, timestamp });
   return (
     <div
       className={

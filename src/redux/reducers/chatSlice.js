@@ -62,8 +62,6 @@ const chatSlice = createSlice({
       );
     },
     sendMessage: (state, action) => {
-      console.log(action.payload);
-
       const newMessage = {
         id: state.currentConversation.messages.length + 1,
         sender: "You",
@@ -80,13 +78,51 @@ const chatSlice = createSlice({
       state.showNewContacts = true;
     },
     createConversation: (state, action) => {
+      // closing the pop-up
       state.showNewContacts = false;
+
+      // adding the contact
+      state.contacts = [
+        {
+          ...action.payload,
+          timestamp: new Date().toString(),
+          updatedAt: new Date().toString(),
+        },
+        ...state.contacts,
+      ];
+
+      // setting the current conversation
+      // state.currentConversation = dummyData.conversations.find(
+      //   (conversation) => conversation.id === action.payload
+      // );
+
+      state.currentConversation = {
+        id: dummyData.conversations.length + 1,
+        contactId: dummyData.conversations.length + 1,
+        messages: [],
+      };
+
+      // setting the current contact
+      // state.currentContact = dummyData.contacts.find(
+      //   (contact) => contact.id === action.payload
+      // );
+
+      state.currentContact = {
+        ...action.payload,
+        timestamp: new Date().toString(),
+        updatedAt: new Date().toString(),
+      };
     },
   },
 });
 
 export const chatReducer = chatSlice.reducer;
-export const { initialLoad, selectConversation, sendMessage, setShowNewContacts, createConversation } =
-  chatSlice.actions;
+export const {
+  initialLoad,
+  selectConversation,
+  sendMessage,
+  setShowNewContacts,
+  createConversation,
+} = chatSlice.actions;
 
 export const chatSelector = (state) => state.chatReducer;
