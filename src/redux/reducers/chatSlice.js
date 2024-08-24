@@ -171,9 +171,22 @@ const chatSlice = createSlice({
 
       // updating the conversations with new message
       state.conversations = state.conversations.map((conversation) => {
-        if (conversation.contactId === state.currentConversation.contactId) {
+        if (
+          conversation.contactId &&
+          conversation.contactId === state.currentConversation.contactId &&
+          state.currentConversation.type === "individual"
+        ) {
           return state.currentConversation;
         }
+
+        if (
+          conversation.groupId &&
+          conversation.groupId === state.currentConversation.groupId &&
+          state.currentConversation.type === "group"
+        ) {
+          return state.currentConversation;
+        }
+
         return conversation;
       });
 

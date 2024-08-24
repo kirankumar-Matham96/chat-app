@@ -27,8 +27,6 @@ export const MessageCard = ({ message, messageType }) => {
    * @returns {Object|undefined} The contact object if a match is found, otherwise undefined.
    */ 
   const currentContact = contacts.find((contact) => {
-    console.log("contact.name => ", contact.name);
-    console.log("sender => ", sender);
     if (contact.name === sender) {
       return true;
     }
