@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import contactStyles from "./index.module.css";
 
 export const Contact = ({ contact, lastMessage }) => {
+  // console.log({lastMessage})
   const dispatch = useDispatch();
 
   const { groupId, id, name, imgUrl } = contact;

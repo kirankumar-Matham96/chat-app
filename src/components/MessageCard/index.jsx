@@ -7,7 +7,6 @@ export const MessageCard = ({ message, messageType }) => {
   const { contacts } = useSelector(chatSelector);
   const currentContact = contacts.find((contact) => contact.name === sender);
   const avatar = currentContact && currentContact.imgUrl;
-
   return (
     <div
       className={

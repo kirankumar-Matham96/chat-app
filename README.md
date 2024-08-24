@@ -1,8 +1,7 @@
 1. add date as well if the date is not current date.
-2. Add member to a group
+2. 
 3. Documentation
 4. Readme
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -85,8 +85,6 @@ const INITIAL_STATE = {
   error: null,
 };
 
-console.log("contacts => ", INITIAL_STATE.contacts);
-
 const chatSlice = createSlice({
   name: "chat",
   initialState: INITIAL_STATE,
@@ -155,7 +153,7 @@ const chatSlice = createSlice({
 
       // updating the conversations with new message
       state.conversations = state.conversations.map((conversation) => {
-        if (conversation.id === state.currentConversation.id) {
+        if (conversation.contactId === state.currentConversation.contactId) {
           return state.currentConversation;
         }
         return conversation;
@@ -205,11 +203,29 @@ const chatSlice = createSlice({
       // updating teh contacts in local storage
       localStorage.setItem("contacts", JSON.stringify(state.contacts));
 
+      // update the conversations
+      state.conversations = [
+        ...state.conversations,
+        {
+          id: state.conversations.length + 1,
+          type: "individual",
+          contactId: action.payload.id,
+          messages: [],
+        },
+      ];
+
+      // upldating local storage conversations
+      localStorage.setItem(
+        "conversations",
+        JSON.stringify(state.conversations)
+      );
+
       // setting the new added contact as current contact
-      const id = state.conversations.length + 1;
+      // update the conversation first
+      const id = state.conversations.length - 1;
       state.currentConversation = {
         id: id,
-        contactId: id,
+        contactId: action.payload.id,
         messages: [],
       };
 
