@@ -56,13 +56,17 @@ const formattedConversations = dummyData.conversations.map((conversation) => {
 });
 
 // if the data is not available in the local storage
-contacts || localStorage.setItem("contacts", JSON.stringify(formattedContacts));
+if (!contacts) {
+  localStorage.setItem("contacts", JSON.stringify(formattedContacts));
+}
 
-conversations ||
+if (!conversations) {
   localStorage.setItem("conversations", JSON.stringify(formattedConversations));
+}
 
-newContacts ||
+if (!newContacts) {
   localStorage.setItem("newContacts", JSON.stringify(newContactsFromFile));
+}
 
 const currentContact = JSON.parse(localStorage.getItem("currentContact"));
 const currentConversation = JSON.parse(
@@ -70,7 +74,7 @@ const currentConversation = JSON.parse(
 );
 
 const INITIAL_STATE = {
-  contacts: contacts || formattedContacts,
+  contacts: JSON.parse(localStorage.getItem("contacts")),
   conversations: conversations || formattedConversations,
   newContacts: newContacts || newContactsFromFile,
   currentContact: currentContact || null,
@@ -80,6 +84,8 @@ const INITIAL_STATE = {
   loading: false,
   error: null,
 };
+
+console.log("contacts => ", INITIAL_STATE.contacts);
 
 const chatSlice = createSlice({
   name: "chat",
@@ -91,8 +97,7 @@ const chatSlice = createSlice({
 
       // setting the current conversation
       const foundConversation = conversations.find(
-        // (conversation) => conversation.id === action.payload
-        (conversation) => conversation.contactId === action.payload
+        (conversation) => conversation.id === action.payload
       );
 
       if (foundConversation) {
@@ -201,11 +206,13 @@ const chatSlice = createSlice({
       localStorage.setItem("contacts", JSON.stringify(state.contacts));
 
       // setting the new added contact as current contact
+      const id = state.conversations.length + 1;
       state.currentConversation = {
-        id: dummyData.conversations.length + 1,
-        contactId: dummyData.conversations.length + 1,
+        id: id,
+        contactId: id,
         messages: [],
       };
+
       // updating the current contact in local storage
       localStorage.setItem(
         "currentConversation",
@@ -244,7 +251,7 @@ const chatSlice = createSlice({
     filterContacts: (state, action) => {
       state.searchTerm = action.payload;
 
-      state.contacts = contacts.filter((contact) =>
+      state.contacts = INITIAL_STATE.contacts.filter((contact) =>
         contact.name.includes(state.searchTerm)
       );
     },
