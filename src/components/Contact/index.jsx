@@ -4,7 +4,23 @@ import { selectConversation } from "../../redux/reducers/chatSlice";
 import { useDispatch } from "react-redux";
 import contactStyles from "./index.module.css";
 
+/**
+ * A functional component representing a contact in the chat application.
+ * Displays the contact's profile picture, name, last message, and timestamp.
+ * 
+ * @param {Object} props - The props object.
+ * @param {Object} props.contact - The contact object containing details like id, name, and imgUrl.
+ * @param {Object} props.lastMessage - The last message object containing details like sender, text, and timestamp.
+ * 
+ * @returns {JSX.Element} A JSX element representing a contact item.
+ */
 export const Contact = ({ contact, lastMessage }) => {
+  /**
+   * Checks if the provided date string corresponds to today's date.
+   * 
+   * @param {string} dateString - The date string in the format 'dd-mm-yyyy'.
+   * @returns {boolean} True if the date is today, false otherwise.
+   */
   const isToday = (dateString) => {
     const dateArr = dateString.split("-");
     const date = `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}`;
@@ -14,6 +30,10 @@ export const Contact = ({ contact, lastMessage }) => {
   const dispatch = useDispatch();
   const { groupId, id, name, imgUrl } = contact;
 
+  /**
+   * Handles the selection of a contact by dispatching an action to select the conversation.
+   * Dispatches the groupId if available, otherwise dispatches the contact id.
+   */
   const onSelectContactHandler = () => {
     // selectConversation
     if (groupId) {

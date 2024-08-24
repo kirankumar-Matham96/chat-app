@@ -6,16 +6,28 @@ import { chatSelector } from "../../redux/reducers/chatSlice";
 import rightContainerStyles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * A functional component that represents the right container of the chat interface.
+ * It displays the current contact's details, the messages in the current conversation,
+ * and an input field for sending new messages. If no contact or conversation is selected,
+ * it redirects to the home page.
+ *
+ * @returns {JSX.Element} A JSX element representing the right container of the chat interface.
+ */
 export const RightContainer = () => {
   const navigate = useNavigate();
   const { currentContact, currentConversation, contacts } =
     useSelector(chatSelector);
 
+  /**
+   * Effect hook that redirects to the home page if no contact or conversation is selected.
+   * Runs whenever `currentContact` or `currentConversation` changes.
+   */
   useEffect(() => {
     if (currentContact === null || currentConversation === null) {
       navigate("/");
     }
-  }, [navigate]);
+  }, [navigate, currentContact, currentConversation]);
 
   let members = null;
   members =

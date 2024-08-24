@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 import dummyData from "./dummyJson.json";
 import newContactsFromFile from "./newContacts.json";
@@ -8,6 +7,12 @@ let contacts = JSON.parse(localStorage.getItem("contacts"));
 let conversations = JSON.parse(localStorage.getItem("conversations"));
 let newContacts = JSON.parse(localStorage.getItem("newContacts"));
 
+/**
+ * Formats a timestamp into a readable date and time string.
+ *
+ * @param {string | Date} dateObject - The date object or string to format.
+ * @returns {{ date: string, time: string }} An object containing the formatted date and time.
+ */
 const formatTimestamp = (dateObject) => {
   const d = new Date(dateObject);
 
@@ -51,6 +56,7 @@ const formattedContacts = dummyData.contacts.map((contact) => {
 const formattedConversations = dummyData.conversations.map((conversation) => {
   conversation.messages.map((message) => {
     message.timestamp = formatTimestamp(message.timestamp);
+    return message;
   });
   return conversation;
 });
@@ -81,14 +87,19 @@ const INITIAL_STATE = {
   currentConversation: currentConversation || null,
   showNewContacts: false,
   searchTerm: "",
-  loading: false,
-  error: null,
 };
 
 const chatSlice = createSlice({
   name: "chat",
   initialState: INITIAL_STATE,
   reducers: {
+    /**
+     * Selects a conversation and updates the state and local storage.
+     *
+     * @param {Object} state - The current state of the chat slice.
+     * @param {Object} action - The action object containing the conversation ID.
+     * @param {number} action.payload - The ID of the conversation to select.
+     */
     selectConversation: (state, action) => {
       const conversations = JSON.parse(localStorage.getItem("conversations"));
       const contacts = JSON.parse(localStorage.getItem("contacts"));
@@ -131,6 +142,13 @@ const chatSlice = createSlice({
       state.searchTerm = "";
     },
 
+    /**
+     * Sends a message in the current conversation and updates the state and local storage.
+     *
+     * @param {Object} state - The current state of the chat slice.
+     * @param {Object} action - The action object containing the message text.
+     * @param {string} action.payload - The text of the message to send.
+     */
     sendMessage: (state, action) => {
       const newMessage = {
         id: state.currentConversation.messages.length + 1,
@@ -182,10 +200,23 @@ const chatSlice = createSlice({
       localStorage.setItem("contacts", JSON.stringify(state.contacts));
     },
 
+    /**
+     * Sets the flag to show the new contacts popup.
+     *
+     * @param {Object} state - The current state of the chat slice.
+     * @param {Object} action - The action object (not used in this case).
+     */
     setShowNewContacts: (state, action) => {
       state.showNewContacts = true;
     },
 
+    /**
+     * Creates a new conversation with a contact and updates the state and local storage.
+     *
+     * @param {Object} state - The current state of the chat slice.
+     * @param {Object} action - The action object containing the contact data.
+     * @param {Object} action.payload - The contact data for the new conversation.
+     */
     createConversation: (state, action) => {
       // closing the pop-up
       state.showNewContacts = false;
@@ -264,6 +295,14 @@ const chatSlice = createSlice({
         JSON.stringify(updatedNewContactsList)
       );
     },
+
+    /**
+     * Filters the contacts based on the search term.
+     *
+     * @param {Object} state - The current state of the chat slice.
+     * @param {Object} action - The action object containing the search term.
+     * @param {string} action.payload - The search term used to filter contacts.
+     */
     filterContacts: (state, action) => {
       state.searchTerm = action.payload;
 
