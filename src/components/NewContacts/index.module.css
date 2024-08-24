@@ -5,6 +5,19 @@
   height: 73.5%;
   background-color: #0009;
 }
+.closeBtn {
+  color: red;
+  margin-left: auto;
+  font-size: 3rem;
+  background-color: #fff;
+  border-radius: 22rem;
+  aspect-ratio: 1/1;
+  box-shadow: 1px 3px 0px 3px #aaa;
+}
+.closeBtn:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0px 0px 0px 3px #aaa;
+}
 .contactsContainer {
   max-height: 100%;
   max-width: 77vw;

@@ -1,8 +1,9 @@
-import React from "react";
+import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import {
   chatSelector,
   createConversation,
+  setShowNewContacts,
 } from "../../redux/reducers/chatSlice";
 import { NewContactTile } from "../NewContactTile";
 import newContactsStyles from "./index.module.css";
@@ -28,10 +29,21 @@ export const NewContacts = () => {
     dispatch(createConversation(contact));
   };
 
+  /**
+   * Handles the closing of the pop-up modal.
+   * Dispatches an action to set the showNewContacts value to false.
+   */
+  const closeModalHandler = () => {
+    dispatch(setShowNewContacts(false));
+  };
+
   return (
     <>
       {showNewContacts ? (
         <div className={newContactsStyles.bgContainer}>
+          <button  className={newContactsStyles.closeBtn} onClick={closeModalHandler} title="close">
+            <IoClose />
+          </button>
           <div className={newContactsStyles.contactsContainer}>
             {newContacts.map((contact) => (
               <div

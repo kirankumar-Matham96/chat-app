@@ -207,7 +207,7 @@ const chatSlice = createSlice({
      * @param {Object} action - The action object (not used in this case).
      */
     setShowNewContacts: (state, action) => {
-      state.showNewContacts = true;
+      state.showNewContacts = action.payload;
     },
 
     /**

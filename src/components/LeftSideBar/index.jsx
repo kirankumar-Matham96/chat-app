@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
  * A functional component representing the left sidebar of the chat application.
  * It includes a header with a title and an icon to open a modal for adding new contacts,
  * a search box for filtering contacts, and a list of contacts.
- * 
+ *
  * @returns {JSX.Element} A JSX element representing the left sidebar of the chat application.
  */
 export const LeftSideBar = () => {
@@ -21,7 +21,7 @@ export const LeftSideBar = () => {
    * It triggers the `setShowNewContacts` action to display the modal.
    */
   const openModelHandler = () => {
-    dispatch(setShowNewContacts());
+    dispatch(setShowNewContacts(true));
   };
 
   return (
