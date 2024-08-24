@@ -973,14 +973,14 @@
     {
       "id": "group1",
       "name": "Project Team A",
-      "imgUrl": "",
+      "imgUrl": "https://res.cloudinary.com/do4v7miwh/image/upload/v1642074086/samples/imagecon-group.jpg",
       "timestamp": "2024-08-22T09:59:00Z",
       "updatedAt": "2024-08-22T11:20:00Z"
     },
     {
       "id": "group2",
       "name": "Friends",
-      "imgUrl": "",
+      "imgUrl": "https://res.cloudinary.com/do4v7miwh/image/upload/v1724480311/samples/people/friends_fridpg.avif",
       "timestamp": "2024-08-22T10:50:00Z",
       "updatedAt": "2024-08-22T13:45:00Z"
     },

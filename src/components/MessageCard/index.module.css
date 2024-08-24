@@ -1,7 +1,5 @@
 .bgContainer {
   border-radius: 0rem 8px 8px 8px;
-  background-color: var(--white);
-  /* padding: 0.5rem 1rem; */
   margin-bottom: 0.25rem;
   display: inline-flex;
   justify-content: space-between;
@@ -15,30 +13,57 @@
   align-self: flex-end;
 }
 .selfMessageContainer {
+  border-radius: 8px 0 8px 8px;
   background-color: var(--white);
   background-color: var(--self-message-bg);
   align-self: flex-end;
-  border-radius: 8px 0 8px 8px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0;
   margin-bottom: 0.25rem;
   display: inline-flex;
   justify-content: space-between;
 }
+
 .otherMessageContainer {
-  border-radius: 0rem 8px 8px 8px;
-  background-color: var(--white);
-  padding: 0.5rem 1rem;
   margin-bottom: 0.25rem;
   display: inline-flex;
-  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  border-radius: 22rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+.dataContainerOther,
+.dataContainerSelf {
+  display: flex;
+}
+
+.dataContainerOther {
+  border-radius: 0rem 8px 8px 8px;
+  padding: 0.5rem 1rem 0;
+  background-color: var(--white);
+}
+.senderMessageContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.3rem;
+}
+.sender {
+  font-weight: 500;
+  margin-bottom: 0.1rem;
 }
 .message {
   margin: 0;
+  margin-bottom: 0.3rem;
 }
 
 .timeStamp {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   align-self: flex-end;
   margin-left: 0.5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.3rem;
   color: #5d5d5d;
 }

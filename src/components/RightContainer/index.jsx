@@ -34,7 +34,12 @@ export const RightContainer = () => {
           <div className={rightContainerStyles.mainContainer}>
             <div className={rightContainerStyles.mainChatHeader}>
               <div className={rightContainerStyles.headerImage}>
-                <img src={currentContact.imgUrl} alt={currentContact.name} />
+                <img
+                  src={
+                    currentContact.imgUrl
+                  }
+                  alt={currentContact.name}
+                />
               </div>
               <div className={rightContainerStyles.headerTextContainer}>
                 <p className={rightContainerStyles.groupName}>
@@ -54,7 +59,11 @@ export const RightContainer = () => {
             </div>
             <div className={rightContainerStyles.mainChatBody}>
               {currentConversation.messages.map((message) => (
-                <MessageCard key={message.id} message={message} />
+                <MessageCard
+                  key={message.id}
+                  message={message}
+                  messageType={currentConversation.type}
+                />
               ))}
             </div>
           </div>

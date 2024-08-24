@@ -1,9 +1,8 @@
-1. Check time format (rewrite the dummy json to format time and date)
-2. From the container, check if the messages are consecutive. If consecutive then, less space. If not more space.
+1. Search Box filter
+2. add date as well if the date is not current date.
 3. Add member to a group
 4. Documentation
 5. Readme
-
 
 # Getting Started with Create React App
 

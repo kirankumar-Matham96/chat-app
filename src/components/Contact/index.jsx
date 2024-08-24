@@ -38,7 +38,7 @@ export const Contact = ({ contact, lastMessage }) => {
           )}
         </div>
         <div className={contactStyles.dateContainer}>
-          <span>{lastMessage ? lastMessage.timestamp : ""}</span>
+          <span>{lastMessage ? lastMessage.timestamp.time : ""}</span>
         </div>
       </div>
     </div>

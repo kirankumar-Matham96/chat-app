@@ -43,17 +43,24 @@ const formatTimestamp = (dateObject) => {
 
 const formattedContacts = dummyData.contacts.map((contact) => {
   // console.log(contact);
+  contact.timestamp = formatTimestamp(contact.timestamp);
+  contact.updatedAt = formatTimestamp(contact.updatedAt);
+
+  return contact;
+});
+
+const formattedConversations = dummyData.conversations.map((conversation) => {
+  conversation.messages.map((message) => {
+    message.timestamp = formatTimestamp(message.timestamp);
+  });
+  return conversation;
 });
 
 // if the data is not available in the local storage
-contacts ||
-  localStorage.setItem("contacts", JSON.stringify(dummyData.contacts));
+contacts || localStorage.setItem("contacts", JSON.stringify(formattedContacts));
 
 conversations ||
-  localStorage.setItem(
-    "conversations",
-    JSON.stringify(dummyData.conversations)
-  );
+  localStorage.setItem("conversations", JSON.stringify(formattedConversations));
 
 newContacts ||
   localStorage.setItem("newContacts", JSON.stringify(newContactsFromFile));
@@ -120,7 +127,7 @@ const chatSlice = createSlice({
         id: state.currentConversation.messages.length + 1,
         sender: "You",
         text: action.payload,
-        timestamp: formatTimestamp(new Date().toString()).time,
+        timestamp: formatTimestamp(new Date().toString()),
       };
 
       // setting the message in currentConversation
