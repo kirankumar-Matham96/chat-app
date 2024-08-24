@@ -60,6 +60,8 @@
 }
 
 .timeStamp {
+  width: 3rem;
+  flex-shrink: 0;
   font-size: 0.7rem;
   align-self: flex-end;
   margin-left: 0.5rem;

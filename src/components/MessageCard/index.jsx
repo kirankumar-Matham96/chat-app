@@ -5,7 +5,18 @@ import messageCardStyles from "./index.module.css";
 export const MessageCard = ({ message, messageType }) => {
   const { sender, text, timestamp } = message;
   const { contacts } = useSelector(chatSelector);
-  const currentContact = contacts.find((contact) => contact.name === sender);
+
+  const currentContact = contacts.find((contact) => {
+    console.log("contact.name => ", contact.name);
+    console.log("sender => ", sender);
+    if (contact.name === sender) {
+      return true;
+    }
+    return false;
+  });
+
+  // console.log(sender, " => ", currentContact);
+
   const avatar = currentContact && currentContact.imgUrl;
   return (
     <div
@@ -38,9 +49,11 @@ export const MessageCard = ({ message, messageType }) => {
               ) : null}
               <span className={messageCardStyles.message}>{text}</span>
             </div>
-            <span className={messageCardStyles.timeStamp}>
-              {timestamp.time}
-            </span>
+            <div>
+              <span className={messageCardStyles.timeStamp}>
+                {timestamp.time}
+              </span>
+            </div>
           </div>
         </div>
       )}

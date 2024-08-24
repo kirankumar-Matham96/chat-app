@@ -268,7 +268,10 @@ const chatSlice = createSlice({
       state.searchTerm = action.payload;
 
       state.contacts = INITIAL_STATE.contacts.filter((contact) =>
-        contact.name.includes(state.searchTerm)
+        contact.name
+          .toLowerCase()
+          .trim()
+          .includes(state.searchTerm.toLowerCase().trim())
       );
     },
   },

@@ -8,8 +8,6 @@ export const Contact = ({ contact, lastMessage }) => {
   const isToday = (dateString) => {
     const dateArr = dateString.split("-");
     const date = `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}`;
-    console.log("new Date() => ", new Date());
-    console.log("new Date(date) => ", new Date(date));
     return new Date().getDate() === new Date(date).getDate();
   };
 

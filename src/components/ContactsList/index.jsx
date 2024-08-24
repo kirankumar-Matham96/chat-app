@@ -14,7 +14,6 @@ export const ContactsList = () => {
         }
 
         const contactConversation = conversations.find((conversations) => {
-          // console.log(conversations);
           if (
             conversations.type === "individual" &&
             conversations.contactId === contact.id
@@ -41,9 +40,6 @@ export const ContactsList = () => {
               contactConversation.messages.length - 1
             ];
         }
-
-        // console.log("contactConversation => ", contactConversation);
-        // console.log("messages => ", contactConversation.messages);
 
         return (
           <div key={contact.id}>
