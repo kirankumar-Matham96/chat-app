@@ -1,8 +1,7 @@
-1. Search Box filter
-2. add date as well if the date is not current date.
-3. Add member to a group
-4. Documentation
-5. Readme
+1. add date as well if the date is not current date.
+2. Add member to a group
+3. Documentation
+4. Readme
 
 # Getting Started with Create React App
 

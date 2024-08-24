@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 import dummyData from "./dummyJson.json";
 import newContactsFromFile from "./newContacts.json";
@@ -75,6 +76,7 @@ const INITIAL_STATE = {
   currentContact: currentContact || null,
   currentConversation: currentConversation || null,
   showNewContacts: false,
+  searchTerm: "",
   loading: false,
   error: null,
 };
@@ -120,6 +122,10 @@ const chatSlice = createSlice({
         "currentContact",
         JSON.stringify(state.currentContact)
       );
+
+      // resetting for after search contact selection
+      state.contacts = contacts;
+      state.searchTerm = "";
     },
 
     sendMessage: (state, action) => {
@@ -235,7 +241,13 @@ const chatSlice = createSlice({
         JSON.stringify(updatedNewContactsList)
       );
     },
-    filterContacts: () => {},
+    filterContacts: (state, action) => {
+      state.searchTerm = action.payload;
+
+      state.contacts = contacts.filter((contact) =>
+        contact.name.includes(state.searchTerm)
+      );
+    },
   },
 });
 
@@ -245,6 +257,7 @@ export const {
   sendMessage,
   setShowNewContacts,
   createConversation,
+  filterContacts,
+  searchTerm,
 } = chatSlice.actions;
-
 export const chatSelector = (state) => state.chatReducer;
