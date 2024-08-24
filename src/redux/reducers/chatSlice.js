@@ -42,10 +42,8 @@ const formatTimestamp = (dateObject) => {
 };
 
 const formattedContacts = dummyData.contacts.map((contact) => {
-  // console.log(contact);
   contact.timestamp = formatTimestamp(contact.timestamp);
   contact.updatedAt = formatTimestamp(contact.updatedAt);
-
   return contact;
 });
 
@@ -71,11 +69,11 @@ const currentConversation = JSON.parse(
 );
 
 const INITIAL_STATE = {
-  contacts: dummyData.contacts,
+  contacts: contacts || formattedContacts,
+  conversations: conversations || formattedConversations,
+  newContacts: newContacts || newContactsFromFile,
   currentContact: currentContact || null,
-  conversations: dummyData.conversations,
   currentConversation: currentConversation || null,
-  newContacts,
   showNewContacts: false,
   loading: false,
   error: null,
@@ -85,27 +83,29 @@ const chatSlice = createSlice({
   name: "chat",
   initialState: INITIAL_STATE,
   reducers: {
-    initialLoad: (state) => {
-      const currentConversation = JSON.parse(
-        localStorage.getItem("currentConversation")
-      );
-      if (currentConversation) {
-        state.currentConversation = currentConversation;
-      }
-
-      if (contacts) {
-        state.contacts = contacts;
-      }
-    },
-
     selectConversation: (state, action) => {
       const conversations = JSON.parse(localStorage.getItem("conversations"));
       const contacts = JSON.parse(localStorage.getItem("contacts"));
 
       // setting the current conversation
-      state.currentConversation = conversations.find(
-        (conversation) => conversation.id === action.payload
+      const foundConversation = conversations.find(
+        // (conversation) => conversation.id === action.payload
+        (conversation) => conversation.contactId === action.payload
       );
+
+      if (foundConversation) {
+        state.currentConversation = foundConversation;
+      } else {
+        const newConversation = {
+          id: conversations.length + 1,
+          type: "individual",
+          contactId: action.payload,
+          messages: [],
+        };
+        conversations.push(newConversation);
+
+        state.currentConversation = newConversation;
+      }
 
       localStorage.setItem(
         "currentConversation",
@@ -181,7 +181,7 @@ const chatSlice = createSlice({
       // closing the pop-up
       state.showNewContacts = false;
 
-      // adding the contact
+      // adding the contact to contacts list
       state.contacts = [
         {
           ...action.payload,
@@ -191,34 +191,56 @@ const chatSlice = createSlice({
         ...state.contacts,
       ];
 
+      // updating teh contacts in local storage
       localStorage.setItem("contacts", JSON.stringify(state.contacts));
 
+      // setting the new added contact as current contact
       state.currentConversation = {
         id: dummyData.conversations.length + 1,
         contactId: dummyData.conversations.length + 1,
         messages: [],
       };
+      // updating the current contact in local storage
       localStorage.setItem(
         "currentConversation",
         JSON.stringify(state.currentConversation)
       );
 
+      // updating the current contact in the state
       state.currentContact = {
         ...action.payload,
         timestamp: formatTimestamp(new Date().toString()).time,
         updatedAt: formatTimestamp(new Date().toString()).time,
       };
+
+      // updating the current contact in the local storage
       localStorage.setItem(
         "currentContact",
         JSON.stringify(state.currentContact)
       );
+
+      /* Removing the contact from the new contacts list after adding it to the contacts list */
+      // get the new contacts from local storage
+      const newContactsList = JSON.parse(localStorage.getItem("newContacts"));
+
+      // updating the new contacts
+      const updatedNewContactsList = newContactsList.filter(
+        (contact) => contact.id !== action.payload.id
+      );
+
+      state.newContacts = [...updatedNewContactsList];
+      // updating the new contacts in local storage
+      localStorage.setItem(
+        "newContacts",
+        JSON.stringify(updatedNewContactsList)
+      );
     },
+    filterContacts: () => {},
   },
 });
 
 export const chatReducer = chatSlice.reducer;
 export const {
-  initialLoad,
   selectConversation,
   sendMessage,
   setShowNewContacts,

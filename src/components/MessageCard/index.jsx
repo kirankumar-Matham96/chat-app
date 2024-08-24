@@ -21,7 +21,6 @@ export const MessageCard = ({ message, messageType }) => {
           <div className={messageCardStyles.dataContainerSelf}>
             <span className={messageCardStyles.message}>{text}</span>
           </div>
-          {console.log(timestamp)}
           <span className={messageCardStyles.timeStamp}>{timestamp.time}</span>
         </div>
       ) : (

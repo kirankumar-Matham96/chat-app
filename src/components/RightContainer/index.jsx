@@ -1,23 +1,21 @@
 import React, { useEffect } from "react";
 import { MessageCard } from "../MessageCard";
 import { MessageInput } from "../MessageInput";
-import { useDispatch, useSelector } from "react-redux";
-import { initialLoad, chatSelector } from "../../redux/reducers/chatSlice";
+import { useSelector } from "react-redux";
+import { chatSelector } from "../../redux/reducers/chatSlice";
 import rightContainerStyles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
 
 export const RightContainer = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const { currentContact, currentConversation, contacts } =
     useSelector(chatSelector);
 
   useEffect(() => {
-    dispatch(initialLoad());
     if (currentContact === null || currentConversation === null) {
       navigate("/");
     }
-  }, [dispatch, navigate]);
+  }, [navigate]);
 
   let members = null;
   members =
@@ -34,12 +32,7 @@ export const RightContainer = () => {
           <div className={rightContainerStyles.mainContainer}>
             <div className={rightContainerStyles.mainChatHeader}>
               <div className={rightContainerStyles.headerImage}>
-                <img
-                  src={
-                    currentContact.imgUrl
-                  }
-                  alt={currentContact.name}
-                />
+                <img src={currentContact.imgUrl} alt={currentContact.name} />
               </div>
               <div className={rightContainerStyles.headerTextContainer}>
                 <p className={rightContainerStyles.groupName}>

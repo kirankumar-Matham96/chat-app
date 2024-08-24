@@ -22,6 +22,7 @@ export const NewContacts = () => {
           <div className={newContactsStyles.contactsContainer}>
             {newContacts.map((contact) => (
               <div
+                key={contact.id}
                 className={newContactsStyles.contactTile}
                 onClick={() => selectContactHandler(contact)}
               >
