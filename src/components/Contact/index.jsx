@@ -5,9 +5,15 @@ import { useDispatch } from "react-redux";
 import contactStyles from "./index.module.css";
 
 export const Contact = ({ contact, lastMessage }) => {
-  // console.log({lastMessage})
-  const dispatch = useDispatch();
+  const isToday = (dateString) => {
+    const dateArr = dateString.split("-");
+    const date = `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}`;
+    console.log("new Date() => ", new Date());
+    console.log("new Date(date) => ", new Date(date));
+    return new Date().getDate() === new Date(date).getDate();
+  };
 
+  const dispatch = useDispatch();
   const { groupId, id, name, imgUrl } = contact;
 
   const onSelectContactHandler = () => {
@@ -39,7 +45,21 @@ export const Contact = ({ contact, lastMessage }) => {
           )}
         </div>
         <div className={contactStyles.dateContainer}>
-          <span>{lastMessage ? lastMessage.timestamp.time : ""}</span>
+          <span>
+            {lastMessage ? (
+              !isToday(lastMessage.timestamp.date) ? (
+                <>
+                  {lastMessage.timestamp.date}
+                  <br />
+                  {lastMessage.timestamp.time}
+                </>
+              ) : (
+                `${lastMessage.timestamp.time}`
+              )
+            ) : (
+              ""
+            )}
+          </span>
         </div>
       </div>
     </div>
