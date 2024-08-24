@@ -4,6 +4,7 @@
   --white: #fff;
   --dim-white: #fefae0;
   --self-message-bg: #caf0f8;
+  --blue: #0077b6;
 }
 
 html {
@@ -18,6 +19,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+div::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 22rem;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
+  outline: 1px solid slategrey;
+  border-radius: 22rem;
 }
 
 code {
